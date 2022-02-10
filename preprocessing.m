@@ -23,7 +23,7 @@ for k=2:length(s_of)
     s_of(k) = s0(k) - s0(k-1) + alpha*s_of(k-1);
 end
 
-s = s_of(1:end-1) - beta*s_of(2:end);
+s = s_of(2:end) - beta*s_of(1:end-1); 
 
 s = [s; mean(s)];
 
