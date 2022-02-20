@@ -18,7 +18,7 @@ for lamda=40:1:120
     end
 end
 
-y = frame(j*40+1-lamda:j*40+40-N);
+y = frame(j*40+1-N:j*40+40-N);
 
 b=max(xcorr(x,y))/max(xcorr(y));
 
