@@ -13,7 +13,7 @@ elseif b>=DLB(3)
     c=3;
 end
 
-b_coded = QLB(c+1);
+b_coded = c;
 
 end
 
