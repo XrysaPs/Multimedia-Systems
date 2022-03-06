@@ -1,6 +1,6 @@
 function [x_decoded] = decode_x_max(x_coded)
     if x_coded<=15
-        x_decoded=31*(x_coded+1)+32;
+        x_decoded=32*(x_coded)+31;
     elseif x_coded>15 && x_coded<=23
         x_decoded=511+(x_coded-15)*64;
     elseif x_coded>23 && x_coded<=31
