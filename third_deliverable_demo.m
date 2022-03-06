@@ -8,7 +8,7 @@ s=[];
 
 for i=1:frame_size:length(sig)
     if i+frame_size-1 > length(sig)
-        s0 = sig(i:end); 
+        break
     else
         s0 = sig(i:i+frame_size-1);
     end
