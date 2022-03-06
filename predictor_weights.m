@@ -1,8 +1,18 @@
-function w = predictor_weights(s, predictor_order)
+function w = predictor_weights(s)
 
-acf = xcorr(s);
-[~,i_max] = max(acf);
-r = acf(1+i_max:i_max + predictor_order);
-R = toeplitz(r,r);
-w = R\r; % -> Identicall to inv(R)*r
+acf = autocorrelation(s);
+r=acf(2:end);
+R = toeplitz(acf);
+R = R(1:8,1:8);
+w = R\r;
+
+end
+
+
+function acf = autocorrelation(s)
+
+acf = nan(9,1);
+for k=0:8
+    acf(k+1) = sum(s(k+1:end).*s(1:end-k));
+end
 end
